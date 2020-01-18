@@ -1,116 +1,636 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>document.getElementsByTagName("html")[0].className += " js";</script>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Responsive Vertical Timeline | CodyHouse</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.getElementsByTagName("html")[0].className += " js";</script>
+<link rel="stylesheet" href="assets/css/style.css">
+<title>2019 Albums Timeline & Map</title>
+  
+<!-- Point at the CDN "hosted" CSS and javascript of leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+<!-- 2019 Albums Map scripts and styles -->
+<style>
+#map {
+height: 550px;
+width: 950px;
+padding:0px;
+  margin: 0 auto;
+}
+</style>
+<script src="2019albumsmapconfig.js"></script>
+
 </head>
-<body>
-	<header class="cd-main-header text-center flex flex-column flex-center">
-    <h1>Responsive Vertical Timeline</h1>
-    <p class="margin-top-sm">👈<a class="color-inherit" href="https://codyhouse.co/gem/vertical-timeline/">Article &amp; Download</a></p>
-  </header>
+<body onLoad="javascript:init();">
+<header class="cd-main-header text-center flex flex-column flex-center">
+<h1>2019 Albums Timeline & Map</h1>
+<p class="margin-top-sm">Thanks to <a class="color-inherit" href="https://codyhouse.co/gem/vertical-timeline/">CodyHouse Vertical Timeline</a>, to <a class="color-inherit" href="https://fontawesome.com">Awesome Font</a> for "<a class="color-inherit" href="https://fontawesome.com/icons/compact-disc">compact-disc</a>" icon, <a class="color-inherit" href="https://css-tricks.com/lazy-load-embedded-youtube-videos/">Chris Coyier for better YouTube embed code</a>, and me <a class="color-inherit" href="https://aniol.github.io/">@aniol</a>.<br>
+And maybe you want to know my most scrobbled <a class="color-inherit" href="https://www.last.fm/user/aneolus/library/artists?from=2019-01-01&to=2019-12-31">artists</a>, <a class="color-inherit" href="https://www.last.fm/user/aneolus/library/albums?from=2019-01-01&to=2019-12-31">albums</a>, and <a class="color-inherit" href="https://www.last.fm/user/aneolus/library/tracks?from=2019-01-01&to=2019-12-31">tracks</a> in 2019.</p>
+</header>
 
-  <section class="cd-timeline js-cd-timeline">
-    <div class="container max-width-lg cd-timeline__container">
-      <div class="cd-timeline__block">
-        <div class="cd-timeline__img cd-timeline__img--picture">
-          <img src="assets/img/cd-icon-picture.svg" alt="Picture">
-        </div> <!-- cd-timeline__img -->
+<section class="cd-timeline js-cd-timeline">
+<div class="container max-width-lg cd-timeline__container">
 
-        <div class="cd-timeline__content text-component">
-          <h2>Title of section 1</h2>
-          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Windhelm - Lugubre</h2>
+<p class="color-contrast-medium"><center>🎵 Ambient Black Metal<br>📍 Bar-le-Duc, France<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/LUjKtTBbTzs" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/LUjKtTBbTzs?autoplay=1><img src=https://img.youtube.com/vi/LUjKtTBbTzs/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">01/03</span>
+<a href="https://windhelm1.bandcamp.com/album/lugubre" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-          <div class="flex justify-between items-center">
-            <span class="cd-timeline__date">Jan 14</span>
-            <a href="#0" class="btn btn--subtle">Read more</a>
-          </div>
-        </div> <!-- cd-timeline__content -->
-      </div> <!-- cd-timeline__block -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>A Pale Horse Named Death - When the World Becomes Undone</h2>
+<p class="color-contrast-medium"><center>🎵 Doom Metal<br>📍 Brooklyn, New York<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/j9ZTCOWds4Y" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/j9ZTCOWds4Y?autoplay=1><img src=https://img.youtube.com/vi/j9ZTCOWds4Y/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">01/18</span>
+<a href="https://apalehorsenameddeath.bandcamp.com/album/when-the-world-becomes-undone" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-      <div class="cd-timeline__block">
-        <div class="cd-timeline__img cd-timeline__img--movie">
-          <img src="assets/img/cd-icon-movie.svg" alt="Movie">
-        </div> <!-- cd-timeline__img -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Medeia - Xenosis</h2>
+<p class="color-contrast-medium"><center>🎵 Melodic Death Metal<br>📍 Tampere, Finland<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/Skc66AiJ3aE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/Skc66AiJ3aE?autoplay=1><img src=https://img.youtube.com/vi/Skc66AiJ3aE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">01/18</span>
+<a href="https://soundcloud.com/medeia-official/sets/xenosis-1" class="btn btn--subtle">▶️ Soundcloud</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-        <div class="cd-timeline__content text-component">
-          <h2>Title of section 2</h2>
-          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-          
-          <div class="flex justify-between items-center">
-            <span class="cd-timeline__date">Jan 18</span>
-            <a href="#0" class="btn btn--subtle">Read more</a>
-          </div>
-        </div> <!-- cd-timeline__content -->
-      </div> <!-- cd-timeline__block -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Interstellar - Infinity</h2>
+<p class="color-contrast-medium"><center>🎵 Atmospheric Black Metal<br>📍 Bydgoszcz, Poland<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/LigZ774E71Y" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/LigZ774E71Y?autoplay=1><img src=https://img.youtube.com/vi/LigZ774E71Y/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">01/20</span>
+<a href="http://interstellarband.bandcamp.com/album/infinity" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-      <div class="cd-timeline__block">
-        <div class="cd-timeline__img cd-timeline__img--picture">
-          <img src="assets/img/cd-icon-picture.svg" alt="Picture">
-        </div> <!-- cd-timeline__img -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Jose Andrea & Uróboros - Bienvenidos al Medievo</h2>
+<p class="color-contrast-medium"><center>🎵 Folk Metal<br>📍 España<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/bcuDMvz79g8" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/bcuDMvz79g8?autoplay=1><img src=https://img.youtube.com/vi/bcuDMvz79g8/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">02/15</span>
+<a href="https://es.wikipedia.org/wiki/Bienvenidos_Al_Medievo" class="btn btn--subtle">▶️ Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-        <div class="cd-timeline__content text-component">
-          <h2>Title of section 3</h2>
-          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Millencolin - Sos</h2>
+<p class="color-contrast-medium"><center>🎵 Punk Rock<br>📍 Örebro, Sweden<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/mFS1yd9KYlM" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mFS1yd9KYlM?autoplay=1><img src=https://img.youtube.com/vi/mFS1yd9KYlM/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">02/15</span>
+<a href="http://www.millencolin.com/start/music/discography/albums/sos" class="btn btn--subtle">🔗 Website</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-          <div class="flex justify-between items-center">
-            <span class="cd-timeline__date">Jan 24</span>
-            <a href="#0" class="btn btn--subtle">Read more</a>
-          </div>
-        </div> <!-- cd-timeline__content -->
-      </div> <!-- cd-timeline__block -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Norvhar - Kauna</h2>
+<p class="color-contrast-medium"><center>🎵 Viking Metal<br>📍 Lausanne, Switzerland<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/jd6LwJAVpZI" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/jd6LwJAVpZI?autoplay=1><img src=https://img.youtube.com/vi/jd6LwJAVpZI/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">02/16</span>
+<a href="https://norvhar.bandcamp.com/album/kauna" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-      <div class="cd-timeline__block">
-        <div class="cd-timeline__img cd-timeline__img--location">
-          <img src="assets/img/cd-icon-location.svg" alt="Location">
-        </div> <!-- cd-timeline__img -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Liily - I Can Fool Anybody In This Town</h2>
+<p class="color-contrast-medium"><center>🎵 Indie Rock<br>📍 Los Angeles, California<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/B3_z22p4e20" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/B3_z22p4e20?autoplay=1><img src=https://img.youtube.com/vi/B3_z22p4e20/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">03/08</span>
+<a href="https://soundcloud.com/liilytheband/sets/liily-i-can-fool-anybody-in" class="btn btn--subtle">▶️ Soundcloud</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-        <div class="cd-timeline__content text-component">
-          <h2>Title of section 4</h2>
-          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Mägo de Oz - Ira Dei</h2>
+<p class="color-contrast-medium"><center>🎵 Folk Hard Rock<br>📍 Madrid, España<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/mzzhoPOyhjE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mzzhoPOyhjE?autoplay=1><img src=https://img.youtube.com/vi/mzzhoPOyhjE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">03/08</span>
+<a href="https://es.wikipedia.org/wiki/Ira_Dei" class="btn btn--subtle">🔗️ Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-          <div class="flex justify-between items-center">
-            <span class="cd-timeline__date">Feb 14</span>
-            <a href="#0" class="btn btn--subtle">Read more</a>
-          </div>
-        </div> <!-- cd-timeline__content -->
-      </div> <!-- cd-timeline__block -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>The Raven Age - Conspiracy</h2>
+<p class="color-contrast-medium"><center>🎵 Post Metal<br>📍 London, United Kingdom<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/VjXjpg4zj6U" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/VjXjpg4zj6U?autoplay=1><img src=https://img.youtube.com/vi/VjXjpg4zj6U/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">03/08</span>
+<a href="https://www.theravenage.com/conspiracy" class="btn btn--subtle">🔗️ Website</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-      <div class="cd-timeline__block">
-        <div class="cd-timeline__img cd-timeline__img--location">
-          <img src="assets/img/cd-icon-location.svg" alt="Location">
-        </div> <!-- cd-timeline__img -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Yawners - Just Calm Down</h2>
+<p class="color-contrast-medium"><center>🎵 Pop Punk<br>📍 Madrid, España<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/q3u_Ddbgr_0" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/q3u_Ddbgr_0?autoplay=1><img src=https://img.youtube.com/vi/q3u_Ddbgr_0/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">03/22</span>
+<a href="http://yawners.bandcamp.com/album/just-calm-down" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-        <div class="cd-timeline__content text-component">
-          <h2>Title of section 5</h2>
-          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Totaled - Lament</h2>
+<p class="color-contrast-medium"><center>🎵 Atmospheric Black Metal<br>📍 Kitchener, Ontario<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/HJvNh3m7b3s" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/HJvNh3m7b3s?autoplay=1><img src=https://img.youtube.com/vi/HJvNh3m7b3s/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">03/29</span>
+<a href="https://profoundlorerecords.bandcamp.com/album/lament" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-          <div class="flex justify-between items-center">
-            <span class="cd-timeline__date">Feb 18</span>
-            <a href="#0" class="btn btn--subtle">Read more</a>
-          </div>
-        </div> <!-- cd-timeline__content -->
-      </div> <!-- cd-timeline__block -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>BRUTUS - Nest</h2>
+<p class="color-contrast-medium"><center>🎵 Alternative<br>📍 Leuven, Belgium<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/leJSDyLJ_mE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/leJSDyLJ_mE?autoplay=1><img src=https://img.youtube.com/vi/leJSDyLJ_mE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">03/29</span>
+<a href="https://wearebrutus.bandcamp.com/album/nest" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-      <div class="cd-timeline__block">
-        <div class="cd-timeline__img cd-timeline__img--movie">
-          <img src="assets/img/cd-icon-movie.svg" alt="Movie">
-        </div> <!-- cd-timeline__img -->
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Eluveitie - Ategnatos</h2>
+<p class="color-contrast-medium"><center>🎵 Folk metal<br>📍 Winterthur, Zürich<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/BG6en2WyAsw" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/BG6en2WyAsw?autoplay=1><img src=https://img.youtube.com/vi/BG6en2WyAsw/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/05</span>
+<a href="https://en.wikipedia.org/wiki/Ategnatos" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-        <div class="cd-timeline__content text-component">
-          <h2>Final Section</h2>
-          <p class="color-contrast-medium">This is the content of the last section</p>
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Vetus Supulcrum - Journey Afar</h2>
+<p class="color-contrast-medium"><center>🎵 Dark Ambient<br>📍 Netherlands<br><br><iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1014708416/size=large/bgcol=ffffff/linkcol=333333/minimal=true/transparent=true/" seamless><a href="http://vetussupulcrum.bandcamp.com/album/journey-afar">Journey Afar by Vetus Supulcrum</a></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/07</span>
+<a href="https://vetussupulcrum.bandcamp.com/album/journey-afar" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
 
-          <div class="flex justify-between items-center">
-            <span class="cd-timeline__date">Feb 26</span>
-          </div>
-        </div> <!-- cd-timeline__content -->
-      </div> <!-- cd-timeline__block -->
-    </div>
-  </section> <!-- cd-timeline -->
-  <script src="assets/js/main.js"></script>
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--movie">
+<img src="assets/img/cd-icon-movie.svg" alt="Movie">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Dijous Satan: SUDESTADA + Sota Terra + Nakkiga + issuna</h2>
+<center>🎵 Black Metal & Crust<br>📍 Reus, Catalonia
+<br>
+<br>
+<p class="color-contrast-medium"><blockquote class="twitter-tweet" data-lang="ca"><p lang="ca" dir="ltr">Programa d&#39;actes d&#39;avui de la Setmana Santa de Reus: <a href="https://t.co/ED96PIABaM">pic.twitter.com/ED96PIABaM</a></p>&mdash; L&#39;illa dels monstres (@illamonstres) <a href="https://twitter.com/illamonstres/status/1118775604164341761?ref_src=twsrc%5Etfw">18 d’abril de 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p><iframe width="100%" height="315" src="https://www.youtube.com/embed/dHizP8D7hfs" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/dHizP8D7hfs?autoplay=1><img src=https://img.youtube.com/vi/dHizP8D7hfs/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/18</span>
+<a href="https://www.facebook.com/events/410267456190115/" class="btn btn--subtle">🔗 Facebook event</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Seaway - Fresh Produce</h2>
+<p class="color-contrast-medium"><center>🎵 Punk Pop<br>📍 Oakville, Canada<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/JlJJmKqgeBA" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/JlJJmKqgeBA?autoplay=1><img src=https://img.youtube.com/vi/JlJJmKqgeBA/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/19</span>
+<a href="https://purenoise.bandcamp.com/album/fresh-produce" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--movie">
+<img src="assets/img/cd-icon-movie.svg" alt="Movie">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Presentació de les memòries del @cracksona9 "Joventut i més enllà. 30 anys de música en català"</h2>
+<p class="color-contrast-medium"><center>🎵 Pop Rock<br>📍 Reus, Catalonia<br>Amb les actuacions d'Ariel Santamaria acompanyat de Jordi Salvadó a la percussió; la cantant i compositora tarragonina Anna D'Ivori; i la formació valenciana Òwix amb l'acompanyament del violonista Dani Cano.<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/lxpMdt1M4uI" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/lxpMdt1M4uI?autoplay=1><img src=https://img.youtube.com/vi/lxpMdt1M4uI/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/20</span>
+<a href="https://www.facebook.com/events/2550832418477190/" class="btn btn--subtle">▶️ Facebook event</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Avandra - Descender</h2>
+<p class="color-contrast-medium"><center>🎵 Progressive Metal<br>📍 San Juan, Puerto Rico<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/26EvfME-skQ" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/26EvfME-skQ?autoplay=1><img src=https://img.youtube.com/vi/26EvfME-skQ/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/26</span>
+<a href="https://blood-music.bandcamp.com/album/descender" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Månegarm - Fornaldarsagor</h2>
+<p class="color-contrast-medium"><center>🎵 Viking Metal<br>📍 Norrtälje, Sweden<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/TeGyZCwdQmo" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/TeGyZCwdQmo?autoplay=1><img src=https://img.youtube.com/vi/TeGyZCwdQmo/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">04/26</span>
+<a href="https://manegarm.bandcamp.com/album/fornaldarsagor" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Matthew And The Atlas - Morning Dancer</h2>
+<p class="color-contrast-medium"><center>🎵 Folk Rock<br>📍 Aldershot, Hampshire<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/_6oWB_gXk44" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/_6oWB_gXk44?autoplay=1><img src=https://img.youtube.com/vi/_6oWB_gXk44/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">05/10</span>
+<a href="https://www.discogs.com/Matthew-and-The-Atlas-Morning-Dancer/release/13607901" class="btn btn--subtle">🔗 Discogs</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Rammstein - Rammstein</h2>
+<p class="color-contrast-medium"><center>🎵 Industrial Metal<br>📍 Berlin, Germany<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/NeQM1c-XCDc" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/NeQM1c-XCDc?autoplay=1><img src=https://img.youtube.com/vi/NeQM1c-XCDc/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">05/17</span>
+<a href="https://en.wikipedia.org/wiki/Untitled_Rammstein_album" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Isotopes - Fractures</h2>
+<p class="color-contrast-medium"><center>🎵 Post Hardcore<br>📍 Sydney, Australia<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/rOkaYBvrcYE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/rOkaYBvrcYE?autoplay=1><img src=https://img.youtube.com/vi/rOkaYBvrcYE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">05/22</span>
+<a href="https://open.spotify.com/album/6K0pKzAdVONm0mrTbfyMXy" class="btn btn--subtle">▶️ Spotify</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Luke Sanger - Ancient Pathways</h2>
+<p class="color-contrast-medium"><center>🎵 Ambient Chill<br>📍 United Kingdom<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/rGOTaE3ZBIE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/rGOTaE3ZBIE?autoplay=1><img src=https://img.youtube.com/vi/rGOTaE3ZBIE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">05/24</span>
+<a href="https://shop.serein.co.uk/album/ancient-pathways" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Siamese - Super Human</h2>
+<p class="color-contrast-medium"><center>🎵 Modern Alternative Metal<br>📍 Copenhagen, Denmark<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/1RDn4yz9QBs" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/1RDn4yz9QBs?autoplay=1><img src=https://img.youtube.com/vi/1RDn4yz9QBs/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">05/24</span>
+<a href="https://siamese.bandcamp.com/album/super-human" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Repeat Repeat - Glazed</h2>
+<p class="color-contrast-medium"><center>🎵 Flower Pop<br>📍 Nashville, Tennessee<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/iPnNeL9jOtE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/iPnNeL9jOtE?autoplay=1><img src=https://img.youtube.com/vi/iPnNeL9jOtE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">05/31</span>
+<a href="https://repeatrepeat.bandcamp.com/album/glazed" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Miyake Haruka - Blank</h2>
+<p class="color-contrast-medium"><center>🎵 Acoustic Pop<br>📍 Tokyo, Japan<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/KqZ0ErKo_dE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/KqZ0ErKo_dE?autoplay=1><img src=https://img.youtube.com/vi/KqZ0ErKo_dE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">06/06</span>
+<a href="https://zankyorecord.bandcamp.com/album/miyake-haruka-blank" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Vauban - Bastille</h2>
+<p class="color-contrast-medium"><center>🎵 Post Hardcore<br>📍 Toulouse, Occitanie<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/XROup8EPRKc" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/XROup8EPRKc?autoplay=1><img src=https://img.youtube.com/vi/XROup8EPRKc/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">06/18</span>
+<a href="https://vauban.bandcamp.com/album/bastille" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Trevor Something - Escape EP</h2>
+<p class="color-contrast-medium"><center>🎵 Chillwave Electronic Synthpop<br>📍 Miami, Florida<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/XQYvrbiGRss" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/XQYvrbiGRss?autoplay=1><img src=https://img.youtube.com/vi/XQYvrbiGRss/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">06/19</span>
+<a href="https://trevorsomething.bandcamp.com/album/escape-ep" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--location">
+<img src="assets/img/cd-icon-location.svg" alt="Location">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Download Festival Madrid 2019</h2>
+<p class="color-contrast-medium"><center>🎵 Hard Rock Metal<br>📍 Madrid, España<br>Cannibal Grandpa, Liily, Children Of Bodom, Brutus, Papa Roach, TURNSTILE, Mantar, Gimme Gimmes, Rolo Tomassi, El Altar Del Holocausto, Red Fang, Rival Sons, Ànteros, MEGARA, Amon Amarth, Stone Temple Pilots, Lovebites, Slipknot, Berri Txarrak, State Champs, Soulfly, Ａｒｃｈｉｔｅｃｔｓ, Watain, Sum 41, Tool, Boston Manor.<br><br><blockquote class="twitter-tweet" data-lang="ca"><p lang="und" dir="ltr">🎶 <a href="https://twitter.com/DownloadFestMad?ref_src=twsrc%5Etfw">@DownloadFestMad</a> <a href="https://t.co/4NsWCEyy7y">pic.twitter.com/4NsWCEyy7y</a></p>&mdash; ¤º°`°`°º¤ø,¸¸,ø α̝̪̞̮η̬̝̼ισ̤̩̳͇ℓ̹̗ ø¤º°`°º¤ø,¸¸,ø¤ (@aniol) <a href="https://twitter.com/aniol/status/1144657165350768641?ref_src=twsrc%5Etfw">28 de juny de 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">06/28 - 06/30</span>
+<a href="https://en.wikipedia.org/wiki/Download_Festival#Spain_3" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Joel Nielsen - Xen Soundtrack (Definitive Edition)</h2>
+<p class="color-contrast-medium"><center>🎵 Ambient Drum & Bass Electro Synth Soundtrack<br>📍 Alberta<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/8S22AEtiLsI" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/8S22AEtiLsI?autoplay=1><img src=https://img.youtube.com/vi/8S22AEtiLsI/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">08/01</span>
+<a href="https://joelnielsen.bandcamp.com/album/xen-soundtrack-definitive-edition" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Slipknot - We Are Not Your Kind</h2>
+<p class="color-contrast-medium"><center>🎵 Nu Metal<br>📍 Des Moines, Iowa, United States<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/VpATBBRajP8" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/VpATBBRajP8?autoplay=1><img src=https://img.youtube.com/vi/VpATBBRajP8/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">08/09</span>
+<a href="https://en.wikipedia.org/wiki/We_Are_Not_Your_Kind" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>loscil - Equivalents</h2>
+<p class="color-contrast-medium"><center>🎵 Ambient Drone<br>📍 Vancouver, Canada<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/OuZHoIfzO_0" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/OuZHoIfzO_0?autoplay=1><img src=https://img.youtube.com/vi/OuZHoIfzO_0/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">08/16</span>
+<a href="https://loscil.bandcamp.com/album/equivalents" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Tool - Fear Inoculum</h2>
+<p class="color-contrast-medium"><center>🎵 Progressive Metal<br>📍 Los Angeles, California, United States<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/q7DfQMPmJRI" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/q7DfQMPmJRI?autoplay=1><img src=https://img.youtube.com/vi/q7DfQMPmJRI/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">08/30</span>
+<a href="https://en.wikipedia.org/wiki/Fear_Inoculum" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Mgła - Age of Excuse</h2>
+<p class="color-contrast-medium"><center>🎵 Atmosferic Black Metal<br>📍 Kraków, Poland<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/J03woJbLrgA" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/J03woJbLrgA?autoplay=1><img src=https://img.youtube.com/vi/J03woJbLrgA/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">09/02</span>
+<a href="https://no-solace.bandcamp.com/album/age-of-excuse" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Korn - The Nothing</h2>
+<p class="color-contrast-medium"><center>🎵 Nu Metal<br>📍 Bakersfield, California<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/yBQNIP4zFP4" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/yBQNIP4zFP4?autoplay=1><img src=https://img.youtube.com/vi/yBQNIP4zFP4/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">09/13</span>
+<a href="https://en.wikipedia.org/wiki/The_Nothing_(Korn_album)" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--movie">
+<img src="assets/img/cd-icon-movie.svg" alt="Movie">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Mgła · Martwa Aura · Dagorath (Sala Bóveda)</h2>
+<p class="color-contrast-medium"><center>🎵 Atmosferic Black Metal<br>📍 Barcelona, Catalonia<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/_mz3mloIvpg" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/_mz3mloIvpg?autoplay=1><img src=https://img.youtube.com/vi/_mz3mloIvpg/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">09/13</span>
+<a href="https://www.facebook.com/events/sala-boveda/mg%C5%82a-martwa-aura-dagorath-barcelona/406470606625613/" class="btn btn--subtle">▶️ Facebook event</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Aephanemer - Prokopton</h2>
+<p class="color-contrast-medium"><center>🎵 Melodic Death Metal<br>📍 Toulouse, Occitanie<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/DNQvMYHuIUA" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/DNQvMYHuIUA?autoplay=1><img src=https://img.youtube.com/vi/DNQvMYHuIUA/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">10/25</span>
+<a href="https://music.aephanemer.com/album/prokopton" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>Faun - Märchen & Mythen</h2>
+<p class="color-contrast-medium"><center>🎵 Pagan folk<br>📍 Germany, Austria, & Switzerland<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/-_el0Jdq6H8" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/-_el0Jdq6H8?autoplay=1><img src=https://img.youtube.com/vi/-_el0Jdq6H8/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">11/15</span>
+<a href="https://www.discogs.com/Faun-M%C3%A4rchen-Mythen/release/14407133" class="btn btn--subtle">🔗 Discogs</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>William Patrick Corgan - Cotillions</h2>
+<p class="color-contrast-medium"><center>🎵 Alternative Rock<br>📍 Chicago, Illinois, United States<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/OuIc8E17QKI" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/OuIc8E17QKI?autoplay=1><img src=https://img.youtube.com/vi/OuIc8E17QKI/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">11/22</span>
+<a href="https://en.wikipedia.org/wiki/Cotillions" class="btn btn--subtle">🔗 Wikipedia</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>SMOKING SOULS - Translúcid</h2>
+<p class="color-contrast-medium"><center>🎵 Pop Rock<br>📍 Pego, País Valencià<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/6grUh0ZfYa8" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/6grUh0ZfYa8?autoplay=1><img src=https://img.youtube.com/vi/6grUh0ZfYa8/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">11/22</span>
+<a href="https://www.viasona.cat/grup/smoking-souls/translucid" class="btn btn--subtle">🔗 Viasona</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+<div class="cd-timeline__block">
+<div class="cd-timeline__img cd-timeline__img--picture">
+<img src="assets/img/compact-disc-solid-white.svg" alt="Picture">
+</div> <!-- cd-timeline__img -->
+<div class="cd-timeline__content text-component">
+<h2>El Pony Pisador - Matricular una Galera</h2>
+<p class="color-contrast-medium"><center>🎵 Folk Bluegrass<br>📍 Barcelona, Spain<br><br><iframe width="100%" height="315" src="https://www.youtube.com/embed/WIW29gRt6LE" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/WIW29gRt6LE?autoplay=1><img src=https://img.youtube.com/vi/WIW29gRt6LE/hqdefault.jpg alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<div class="flex justify-between items-center">
+<span class="cd-timeline__date">12/13</span>
+<a href="https://elponypisador.bandcamp.com/album/matricular-una-galera" class="btn btn--subtle">▶️ Bandcamp</a>
+</div>
+</div> <!-- cd-timeline__content -->
+</div> <!-- cd-timeline__block -->
+
+
+</div>
+<!-- 2019 Albums Map -->
+<div id="map"></div>   
+</section> <!-- cd-timeline -->
+<script src="assets/js/main.js"></script>
 </body>
 </html>
